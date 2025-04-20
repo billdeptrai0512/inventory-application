@@ -1,0 +1,37 @@
+<form method="POST" action="/create" style="display: flex; flex-direction: column;">
+    <h2>Create new item</h2>
+    <label for="type">Category</label>
+    <select name="type" id="type">
+      <option value="top">top</option>
+      <option value="bottom">bottom</option>
+      <option value="sweater">sweater</option>
+      <option value="jacket">jacket</option>
+      <option value="extra">extra</option>
+    </select>
+    <label for="section">Section</label>
+    <select name="section" id="section">
+      <option value="long">long</option>
+      <option value="short">short</option>
+      <option value="gakuran">gakuran</option>
+      <option value="blazer">blazer</option>
+      <option value="tie">tie</option>
+      <option value="bow">bow</option>
+      <option value="bag">bag</option>
+    </select>
+    <label for="image">image URL</label>
+    <input type="text" name="image" id="image" placeholder="image">
+    <label for="demo_image">demo_image URL</label>
+    <input type="text" name="demo_image" id="demo_image" placeholder="demo_image">
+    <label for="amount">Số lượng</label>
+    <input type="number" name="amount" id="amount" placeholder="amount">
+    <label for="total">Giá tiền</label>
+    <input type="number" name="total" id="total" placeholder="total">
+    <label for="size">Size</label>
+    <select name="size[]" id="size" multiple size="4">
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+    <input type="submit" value="create">
+</form>

@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Categories</title>
+  </head>
+  <body>
+    <div>
+        <% categories.map((section, index) => { %>
+          <div style="border: 1px red solid;">
+              <h2><%= section.name%></h2>
+              <a href="/categories/<%= section.id %>">View all item in this categories</a>
+                <!-- inside categories/:categoriesId -> create/delete/edit -->
+          </div>
+        <%}) %>
+    </div>
+    <a href="/">Go Back</a>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title><%= categories.name %></title>
+  </head>
+  <body>
+        <% items.map((item, index) => { %>
+        <div style="border: 1px blue solid;">
+            <p><%= item.image%></p>
+            <p><%= item.demo_image%></p>
+            <p><%= item.amount%></p>
+            <p><%= item.total%></p>
+            <p><%= item.size%></p>
+            <a href="/update/<%= item.id %>">
+                <button type="button">Update</button>
+            </a>
+            <a href="/delete/<%= item.id %>">
+                <button type="button">Delete</button>
+            </a>
+        </div>
+        <%}) %>
+    <a href="/">Go Back</a>
+  </body>
+</html>

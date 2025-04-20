@@ -1,0 +1,44 @@
+<form method="POST" action="/update/<%= item.id %>" style="display: flex; flex-direction: column;">
+    <h2>Update item</h2>
+  
+    <label for="type">Category</label>
+    <select name="type" id="type">
+      <option value="top" <%= category.type === 'top' ? 'selected' : '' %>>top</option>
+      <option value="bottom" <%= category.type === 'bottom' ? 'selected' : '' %>>bottom</option>
+      <option value="sweater" <%= category.type === 'sweater' ? 'selected' : '' %>>sweater</option>
+      <option value="jacket" <%= category.type === 'jacket' ? 'selected' : '' %>>jacket</option>
+      <option value="extra" <%= category.type === 'extra' ? 'selected' : '' %>>extra</option>
+    </select>
+  
+    <label for="section">Section</label>
+    <select name="section" id="section">
+      <option value="long" <%= category.section === 'long' ? 'selected' : '' %>>long</option>
+      <option value="short" <%= category.section === 'short' ? 'selected' : '' %>>short</option>
+      <option value="gakuran" <%= category.section === 'gakuran' ? 'selected' : '' %>>gakuran</option>
+      <option value="blazer" <%= category.section === 'blazer' ? 'selected' : '' %>>blazer</option>
+      <option value="tie" <%= category.section === 'tie' ? 'selected' : '' %>>tie</option>
+      <option value="bow" <%= category.section === 'bow' ? 'selected' : '' %>>bow</option>
+      <option value="bag" <%= category.section === 'bag' ? 'selected' : '' %>>bag</option>
+    </select>
+  
+    <label for="image">image URL</label>
+    <input type="text" name="image" id="image" placeholder="image" value="<%= item.image %>">
+  
+    <label for="demo_image">demo_image URL</label>
+    <input type="text" name="demo_image" id="demo_image" placeholder="demo_image" value="<%= item.demo_image %>">
+  
+    <label for="amount">Số lượng</label>
+    <input type="number" name="amount" id="amount" placeholder="amount" value="<%= item.amount %>">
+  
+    <label for="total">Giá tiền</label>
+    <input type="number" name="total" id="total" placeholder="total" value="<%= item.total %>">
+  
+    <label for="size">Size</label>
+    <select name="size[]" id="size" multiple size="4">
+      <% ['S', 'M', 'L', 'XL'].forEach(function(size) { %>
+        <option value="<%= size %>" <%= item.sizes.includes(size) ? 'selected' : '' %>><%= size %></option>
+      <% }); %>
+    </select>
+  
+    <input type="submit" value="Update">
+  </form>

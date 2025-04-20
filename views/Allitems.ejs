@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>All Items</title>
+  </head>
+  <body>
+    <div style="display: flex; width: 100vw;">
+        <div style="border: 1px red solid;">
+            <div>
+                <a href="/all-items">
+                    <h2>ALL</h2>
+                </a>
+            </div>
+            <% categories.map((category, index) => { %>
+                <div>
+                    <a href="/all-items/<%= category.id %>">
+                        <h2><%= category.name %></h2>
+                    </a>
+                </div>
+            <%}) %>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 10em);;">
+            <% categories.map((category, index) => { %>
+                <% items.map((item, index) => { %>
+                    <% if (item.category_id === category.id) { %>
+                        <div style="border: 1px blue solid;">
+                            <p><%= item.image%></p>
+                            <p><%= item.demo_image%></p>
+                            <p><%= item.amount%></p>
+                            <p><%= item.total%></p>
+                            <p><%= item.size%></p>
+                            <a href="/update/<%= item.id %>">
+                                <button type="button">Update</button>
+                            </a>
+                            <a href="/delete/<%= item.id %>">
+                                <button type="button">Delete</button>
+                            </a>
+                        </div>
+                    <%} %>
+                <%}) %>
+            <%}) %>
+        </div>
+    </div>
+    <a href="/create">Create New Item</a>
+    <a href="/">Go Back</a>
+  </body>
+</html>
